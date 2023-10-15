@@ -40,5 +40,18 @@
 
 .scaling-image {
   position: relative;
-  animation: growShrink 5s infinite; /* Adjust animation duration as needed */
+  animation: growShrink 5s infinite;
+}
+
+.hover-zoom-image:hover {
+  transform: scale(1.09);
+  transition: transform 0.9s;
+}
+
+.section-expandable {
+  background-color: var(--color-neutral-0);
+
+  border: 0;
+
+  border-bottom-width: 0;
 }

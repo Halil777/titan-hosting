@@ -1,25 +1,25 @@
 export const recItems = [
   {
-    title: "1 Гбит/с",
-    subTitle: "Пропускная скорость порта",
+    title: "gBit",
+    subTitle: "portSpeed",
     pic: "./gif/speedometr.gif",
   },
 
   {
     title: "24/7",
-    subTitle: "Круглосуточная поддержка без выходных",
+    subTitle: "support7_24",
     pic: "./gif/operator.gif",
   },
 
   {
     title: "∞ ТБ",
-    subTitle: "Безлимитный трафик во всех тарифах",
+    subTitle: "unlimitedTraffic",
     pic: "./gif/speedometr.gif",
   },
 
   {
-    title: "15-20 минут",
-    subTitle: "Готовность сервера после заказа",
+    title: "minutes",
+    subTitle: "serverReadines",
     pic: "./gif/timer.gif",
     size: "200px",
     paddingTop: "20px",

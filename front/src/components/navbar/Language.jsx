@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { Button, Menu, MenuItem, Typography } from "@mui/material";
 import { useTranslation } from "react-i18next";
-import TranslateIcon from "@mui/icons-material/Translate";
 
 const Language = () => {
   const { i18n } = useTranslation();
@@ -36,7 +35,7 @@ const Language = () => {
               style={{ width: "20px", marginRight: 10 }}
               alt="russian flag"
             />
-            <Typography>Russian</Typography>
+            <Typography>Русский</Typography>
           </>
         ) : (
           <>
@@ -66,7 +65,7 @@ const Language = () => {
               style={{ width: "20px", marginRight: 10 }}
               alt="russian flag"
             />
-            Russian
+            Русский
           </>
         </MenuItem>
         <MenuItem onClick={() => changeLanguage("en")}>

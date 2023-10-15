@@ -7,8 +7,11 @@ import {
   Typography,
 } from "@mui/material";
 import { perfectItems } from "./perfectItems.mjs";
+import { useTranslation } from "react-i18next";
 
 const PerfectComponent = () => {
+  const { t } = useTranslation();
+
   return (
     <div
       style={{
@@ -28,7 +31,7 @@ const PerfectComponent = () => {
             color: "#2B468D",
           }}
         >
-          Мы стараемся быть идеальными во всем
+          {t("tryToBePerfect")}
         </Typography>
 
         <Grid container mt={10} spacing={10}>
@@ -65,9 +68,9 @@ const PerfectComponent = () => {
                   <Typography sx={{ textAlign: "center" }}>
                     {item.title}
                   </Typography>
-                  <Tooltip title={item.subTitle}>
+                  <Tooltip title={t(item.subTitle)}>
                     <Typography sx={{ textAlign: "center" }}>
-                      {item.subTitle.slice(0, 100)}...
+                      {t(item.subTitle).slice(0, 100)}...
                     </Typography>
                   </Tooltip>
                 </Stack>

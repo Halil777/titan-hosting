@@ -1,8 +1,11 @@
 import Header from "./Header";
 import { Box, Container, Stack, Typography, Button } from "@mui/material";
 import VpsVdsServers from "./vps/VpsVdsServers";
+import { useNavigate } from "react-router-dom";
 
 const Navbar = () => {
+  const location = useNavigate();
+
   return (
     <div>
       <Header />
@@ -28,9 +31,15 @@ const Navbar = () => {
             </Stack>
             <Stack direction="row" spacing={3} alignItems="center">
               <VpsVdsServers />
-              <Button variant="text">hi-cpu vps/vds </Button>
-              <Button variant="text">vps storage </Button>
-              <Button variant="text">ssl </Button>
+              <Button variant="text" onClick={() => location("/hi-cpu")}>
+                hi-cpu vps/vds{" "}
+              </Button>
+              <Button variant="text" onClick={() => location("/vds-storage")}>
+                vps storage{" "}
+              </Button>
+              <Button variant="text" onClick={() => location("/ssl")}>
+                ssl
+              </Button>
             </Stack>
           </Stack>
         </Container>

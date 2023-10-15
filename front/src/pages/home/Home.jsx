@@ -7,7 +7,13 @@ import "swiper/css/scrollbar";
 import RecomendationComponent from "./RecomendationComponent";
 import PerfectComponent from "./PerfectComponent";
 import RentComponent from "./RentComponent";
+import RentServer from "./RentServer";
+import { useTranslation } from "react-i18next";
+import NewsCompany from "./NewsCompany";
+
 const Home = () => {
+  const { t } = useTranslation();
+
   return (
     <>
       <div style={{ background: "#1A3378", paddingTop: "70px" }}>
@@ -24,7 +30,7 @@ const Home = () => {
               <Grid container>
                 <Grid item lg={6} sm={12} xs={12}>
                   <Typography variant="h2" color="white">
-                    Superservery <br /> v Niderlandah !
+                    {t("superServerNider")}
                   </Typography>
                   <Typography pt={4} color="white">
                     Lorem ipsum dolor sit amet consectetur adipisicing elit.
@@ -133,6 +139,8 @@ const Home = () => {
       </Container>
       <PerfectComponent />
       <RentComponent />
+      <RentServer />
+      <NewsCompany />
     </>
   );
 };

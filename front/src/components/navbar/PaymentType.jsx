@@ -1,9 +1,11 @@
 import { Button, Menu, MenuItem } from "@mui/material";
 import { useState } from "react";
 import AccountBalanceWalletIcon from "@mui/icons-material/AccountBalanceWallet";
+import { useTranslation } from "react-i18next";
 
 const PaymentType = () => {
   const [anchorEl, setAnchorEl] = useState(null);
+  const { t } = useTranslation();
 
   const open = Boolean(anchorEl);
 
@@ -22,7 +24,7 @@ const PaymentType = () => {
         onClick={handleClick}
         variant="text"
       >
-        Payment type
+        {t("paymentType")}
       </Button>
       <Menu
         id="basic-menu"

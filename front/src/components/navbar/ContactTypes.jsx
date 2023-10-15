@@ -1,9 +1,11 @@
 import { Button, Menu, MenuItem } from "@mui/material";
 import { useState } from "react";
 import PermPhoneMsgIcon from "@mui/icons-material/PermPhoneMsg";
+import { useTranslation } from "react-i18next";
 
 const ContactTypes = () => {
   const [anchorEl, setAnchorEl] = useState(null);
+  const { t } = useTranslation();
 
   const open = Boolean(anchorEl);
 
@@ -21,7 +23,7 @@ const ContactTypes = () => {
         variant="text"
         onClick={handleClick}
       >
-        Contact
+        {t("contact")}
       </Button>
       <Menu
         id="basic-menu"

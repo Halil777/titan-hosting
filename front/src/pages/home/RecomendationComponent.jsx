@@ -1,7 +1,9 @@
 import { Grid, Stack, Typography } from "@mui/material";
 import { recItems } from "./recomendationItems";
+import { useTranslation } from "react-i18next";
 
 const RecomendationComponent = () => {
+  const { t } = useTranslation();
   return (
     <div style={{ marginTop: "50px" }}>
       <Grid container>
@@ -25,9 +27,9 @@ const RecomendationComponent = () => {
                   }}
                   alt="speedomter"
                 />
-                <Typography>{item.title}</Typography>
+                <Typography>{t(item.title)}</Typography>
                 <Typography sx={{ textAlign: "center", width: "70%" }}>
-                  {item.subTitle}
+                  {t(item.subTitle)}
                 </Typography>
               </Stack>
             </Grid>
