@@ -6,8 +6,10 @@ import {
   Stack,
   Typography,
 } from "@mui/material";
+import { useTranslation } from "react-i18next";
 
 const CostSsl = () => {
+  const { t } = useTranslation();
   return (
     <div style={{ paddingTop: 50, paddingBottom: 50, background: "#121851" }}>
       <Container>
@@ -17,7 +19,7 @@ const CostSsl = () => {
           fontWeight={700}
           variant="h3"
         >
-          Стоимость SSL-сертификатов
+          {t("costSslTitle")}
         </Typography>
         <Typography
           textAlign="center"
@@ -26,7 +28,7 @@ const CostSsl = () => {
           variant="h5"
           mt={2}
         >
-          Защитите свой сайт за несколько минут!
+          {t("costSslSubtitle")}
         </Typography>
         <Grid container spacing={4} mt={7}>
           <Grid item lg={3} md={6} sm={6} xs={12}>
@@ -54,21 +56,25 @@ const CostSsl = () => {
                 >
                   DV
                 </Typography>
-                <Typography sx={{ color: "gray" }}>Уровень доверия</Typography>
-                <Typography>Низкий</Typography>
+                <Typography sx={{ color: "gray" }}>
+                  {t("trustLevel")}
+                </Typography>
+                <Typography>{t("short")}</Typography>
                 <Divider />
-                <Typography sx={{ color: "gray" }}>Доступность</Typography>
-                <Typography>Частным лицам, компаниям</Typography>
+                <Typography sx={{ color: "gray" }}>
+                  {t("availability")}
+                </Typography>
+                <Typography>{t("individualCompanies")}</Typography>
                 <Divider />
-                <Typography sx={{ color: "gray" }}>Проверка</Typography>
-                <Typography>Домен</Typography>
+                <Typography sx={{ color: "gray" }}>{t("test")}</Typography>
+                <Typography>{t("domain")}</Typography>
                 <Divider />
               </Stack>
               <Typography
                 textAlign="center"
                 sx={{ fontSize: 18, fontWeight: 600, mt: 4 }}
               >
-                <strong>16.00 €</strong>/ в год
+                <strong>16.00 €</strong>/ {t("inYear")}
               </Typography>
             </Box>
           </Grid>
@@ -97,21 +103,25 @@ const CostSsl = () => {
                 >
                   DV / WC
                 </Typography>
-                <Typography sx={{ color: "gray" }}>Уровень доверия</Typography>
-                <Typography>Низкий</Typography>
+                <Typography sx={{ color: "gray" }}>
+                  {t("trustLevel")}
+                </Typography>
+                <Typography>{t("short")}</Typography>
                 <Divider />
-                <Typography sx={{ color: "gray" }}>Доступность</Typography>
-                <Typography>Частным лицам, компаниям</Typography>
+                <Typography sx={{ color: "gray" }}>
+                  {t("availability")}
+                </Typography>
+                <Typography>{t("individualCompanies")}</Typography>
                 <Divider />
-                <Typography sx={{ color: "gray" }}>Проверка</Typography>
-                <Typography>Домен</Typography>
+                <Typography sx={{ color: "gray" }}>{t("test")}</Typography>
+                <Typography>{t("domain")}</Typography>
                 <Divider />
               </Stack>
               <Typography
                 textAlign="center"
                 sx={{ fontSize: 18, fontWeight: 600, mt: 4 }}
               >
-                <strong>45.00 €</strong>/ в год
+                <strong>45.00 €</strong>/ {t("inYear")}
               </Typography>
             </Box>
           </Grid>
@@ -145,21 +155,25 @@ const CostSsl = () => {
                 >
                   DV MD
                 </Typography>
-                <Typography sx={{ color: "gray" }}>Уровень доверия</Typography>
-                <Typography>Низкий</Typography>
+                <Typography sx={{ color: "gray" }}>
+                  {t("trustLevel")}
+                </Typography>
+                <Typography>{t("short")}</Typography>
                 <Divider />
-                <Typography sx={{ color: "gray" }}>Доступность</Typography>
-                <Typography>Частным лицам, компаниям</Typography>
+                <Typography sx={{ color: "gray" }}>
+                  {t("availability")}
+                </Typography>
+                <Typography>{t("individualCompanies")}</Typography>
                 <Divider />
-                <Typography sx={{ color: "gray" }}>Проверка</Typography>
-                <Typography>Домен</Typography>
+                <Typography sx={{ color: "gray" }}>{t("test")}</Typography>
+                <Typography>{t("domain")}</Typography>
                 <Divider />
               </Stack>
               <Typography
                 textAlign="center"
                 sx={{ fontSize: 18, fontWeight: 600, mt: 4 }}
               >
-                <strong>35.00 €</strong>/ в год
+                <strong>35.00 €</strong>/ {t("inYear")}
               </Typography>
             </Box>
           </Grid>
@@ -193,21 +207,25 @@ const CostSsl = () => {
                 >
                   DV WC
                 </Typography>
-                <Typography sx={{ color: "gray" }}>Уровень доверия</Typography>
-                <Typography>Низкий</Typography>
+                <Typography sx={{ color: "gray" }}>
+                  {t("trustLevel")}
+                </Typography>
+                <Typography>{t("short")}</Typography>
                 <Divider />
-                <Typography sx={{ color: "gray" }}>Доступность</Typography>
-                <Typography>Частным лицам, компаниям</Typography>
+                <Typography sx={{ color: "gray" }}>
+                  {t("availability")}
+                </Typography>
+                <Typography>{t("individualCompanies")}</Typography>
                 <Divider />
-                <Typography sx={{ color: "gray" }}>Проверка</Typography>
-                <Typography>Домен</Typography>
+                <Typography sx={{ color: "gray" }}>{t("test")}</Typography>
+                <Typography>{t("domain")}</Typography>
                 <Divider />
               </Stack>
               <Typography
                 textAlign="center"
                 sx={{ fontSize: 18, fontWeight: 600, mt: 4 }}
               >
-                <strong>120.00 €</strong>/ в год
+                <strong>120.00 €</strong>/ {t("inYear")}
               </Typography>
             </Box>
           </Grid>
@@ -241,21 +259,25 @@ const CostSsl = () => {
                 >
                   OV MD
                 </Typography>
-                <Typography sx={{ color: "gray" }}>Уровень доверия</Typography>
-                <Typography>Средний</Typography>
+                <Typography sx={{ color: "gray" }}>
+                  {t("trustLevel")}
+                </Typography>
+                <Typography>{t("average")}</Typography>
                 <Divider />
-                <Typography sx={{ color: "gray" }}>Доступность</Typography>
-                <Typography>Компаниям</Typography>
+                <Typography sx={{ color: "gray" }}>
+                  {t("availability")}
+                </Typography>
+                <Typography>{t("companies")}</Typography>
                 <Divider />
-                <Typography sx={{ color: "gray" }}>Проверка</Typography>
-                <Typography>Домен и организация</Typography>
+                <Typography sx={{ color: "gray" }}>{t("test")}</Typography>
+                <Typography>{t("domainAndOrganization")}</Typography>
                 <Divider />
               </Stack>
               <Typography
                 textAlign="center"
                 sx={{ fontSize: 18, fontWeight: 600, mt: 4 }}
               >
-                <strong>50.00 €</strong>/ в год
+                <strong>50.00 €</strong>/ {t("inYear")}
               </Typography>
             </Box>
           </Grid>
@@ -289,21 +311,25 @@ const CostSsl = () => {
                 >
                   OV WC
                 </Typography>
-                <Typography sx={{ color: "gray" }}>Уровень доверия</Typography>
-                <Typography>Средний</Typography>
+                <Typography sx={{ color: "gray" }}>
+                  {t("trustLevel")}
+                </Typography>
+                <Typography>{t("average")}</Typography>
                 <Divider />
-                <Typography sx={{ color: "gray" }}>Доступность</Typography>
-                <Typography>Компаниям</Typography>
+                <Typography sx={{ color: "gray" }}>
+                  {t("availability")}
+                </Typography>
+                <Typography>{t("companies")}</Typography>
                 <Divider />
-                <Typography sx={{ color: "gray" }}>Проверка</Typography>
-                <Typography>Домен и организация</Typography>
+                <Typography sx={{ color: "gray" }}>{t("test")}</Typography>
+                <Typography>{t("domainAndOrganization")}</Typography>
                 <Divider />
               </Stack>
               <Typography
                 textAlign="center"
                 sx={{ fontSize: 18, fontWeight: 600, mt: 4 }}
               >
-                <strong>130.00 €</strong>/ в год
+                <strong>130.00 €</strong>/ {t("inYear")}
               </Typography>
             </Box>
           </Grid>
@@ -337,21 +363,25 @@ const CostSsl = () => {
                 >
                   EV MD
                 </Typography>
-                <Typography sx={{ color: "gray" }}>Уровень доверия</Typography>
-                <Typography>Высокий</Typography>
+                <Typography sx={{ color: "gray" }}>
+                  {t("trustLevel")}
+                </Typography>
+                <Typography>{t("high")}</Typography>
                 <Divider />
-                <Typography sx={{ color: "gray" }}>Доступность</Typography>
-                <Typography>Компаниям</Typography>
+                <Typography sx={{ color: "gray" }}>
+                  {t("availability")}
+                </Typography>
+                <Typography>{t("companies")}</Typography>
                 <Divider />
-                <Typography sx={{ color: "gray" }}>Проверка</Typography>
-                <Typography>Расширенная проверка</Typography>
+                <Typography sx={{ color: "gray" }}>{t("test")}</Typography>
+                <Typography>{t("extendedCheck")}</Typography>
                 <Divider />
               </Stack>
               <Typography
                 textAlign="center"
                 sx={{ fontSize: 18, fontWeight: 600, mt: 4 }}
               >
-                <strong>130.00 €</strong>/ в год
+                <strong>130.00 €</strong>/ {t("inYear")}
               </Typography>
             </Box>
           </Grid>

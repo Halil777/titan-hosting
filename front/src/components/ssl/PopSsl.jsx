@@ -6,17 +6,19 @@ import {
   Stack,
   Typography,
 } from "@mui/material";
+import { useTranslation } from "react-i18next";
 
 const PopSsl = () => {
+  const { t } = useTranslation();
   return (
     <div style={{ paddingTop: 50, paddingBottom: 50 }}>
       <Container>
         <Stack spacing={3}>
           <Typography textAlign="center" variant="h3">
-            Популярные SSL-сертификаты
+            {t("popSsl")}
           </Typography>
           <Typography textAlign="center" variant="h5" color="gray">
-            Мгновенно обеспечивают защиту вашего сайта
+            {t("popSslSubTitle")}
           </Typography>
         </Stack>
         <Box
@@ -54,19 +56,21 @@ const PopSsl = () => {
                     DV
                   </Typography>
                   <Typography sx={{ color: "gray" }}>
-                    Уровень доверия
+                    {t("trustLevel")}
                   </Typography>
-                  <Typography>Низкий</Typography>
+                  <Typography>{t("short")}</Typography>
                   <Divider />
-                  <Typography sx={{ color: "gray" }}>Доступность</Typography>
-                  <Typography>Частным лицам, компаниям</Typography>
+                  <Typography sx={{ color: "gray" }}>
+                    {t("availability")}
+                  </Typography>
+                  <Typography>{t("individualCompanies")}</Typography>
                   <Divider />
-                  <Typography sx={{ color: "gray" }}>Проверка</Typography>
-                  <Typography>Домен</Typography>
+                  <Typography sx={{ color: "gray" }}>{t("test")}</Typography>
+                  <Typography>{t("domain")}</Typography>
                   <Divider />
                 </Stack>
                 <Typography sx={{ fontSize: 18, fontWeight: 600, mt: 4 }}>
-                  <strong>16.00 €</strong>/ в год
+                  <strong>16.00 €</strong>/ {t("inYear")}
                 </Typography>
               </Box>
             </Grid>
@@ -96,19 +100,21 @@ const PopSsl = () => {
                     DV / WC
                   </Typography>
                   <Typography sx={{ color: "gray" }}>
-                    Уровень доверия
+                    {t("trustLevel")}
                   </Typography>
-                  <Typography>Низкий</Typography>
+                  <Typography>{t("short")}</Typography>
                   <Divider />
-                  <Typography sx={{ color: "gray" }}>Доступность</Typography>
-                  <Typography>Частным лицам, компаниям</Typography>
+                  <Typography sx={{ color: "gray" }}>
+                    {t("availability")}
+                  </Typography>
+                  <Typography>{t("individualCompanies")}</Typography>
                   <Divider />
-                  <Typography sx={{ color: "gray" }}>Проверка</Typography>
-                  <Typography>Домен</Typography>
+                  <Typography sx={{ color: "gray" }}>{t("test")}</Typography>
+                  <Typography>{t("domain")}</Typography>
                   <Divider />
                 </Stack>
                 <Typography sx={{ fontSize: 18, fontWeight: 600, mt: 4 }}>
-                  <strong>45.00 €</strong>/ в год
+                  <strong>45.00 €</strong>/ {t("inYear")}
                 </Typography>
               </Box>
             </Grid>
@@ -143,19 +149,21 @@ const PopSsl = () => {
                     OV MD
                   </Typography>
                   <Typography sx={{ color: "gray" }}>
-                    Уровень доверия
+                    {t("trustLevel")}
                   </Typography>
-                  <Typography>Средний</Typography>
+                  <Typography>{t("average")}</Typography>
                   <Divider />
-                  <Typography sx={{ color: "gray" }}>Доступность</Typography>
-                  <Typography>Компаниям</Typography>
+                  <Typography sx={{ color: "gray" }}>
+                    {t("availability")}
+                  </Typography>
+                  <Typography>{t("companies")}</Typography>
                   <Divider />
-                  <Typography sx={{ color: "gray" }}>Проверка</Typography>
-                  <Typography>Домен и организация</Typography>
+                  <Typography sx={{ color: "gray" }}>{t("test")}</Typography>
+                  <Typography>{t("domainAndOrganization")}</Typography>
                   <Divider />
                 </Stack>
                 <Typography sx={{ fontSize: 18, fontWeight: 600, mt: 4 }}>
-                  <strong>50.00 €</strong>/ в год
+                  <strong>50.00 €</strong>/ {t("inYear")}
                 </Typography>
               </Box>
             </Grid>

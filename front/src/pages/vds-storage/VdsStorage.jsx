@@ -13,16 +13,29 @@ import { additionalAccordionItems } from "../../components/hi-cpu/additionalServ
 import { useTranslation } from "react-i18next";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import { useState } from "react";
+import { Helmet } from "react-helmet-async";
 
 const VdsStorage = () => {
   const { t } = useTranslation();
-  const [isAccordionOpen, setIsAccordionOpen] = useState(false);
+
+  const [openStates, setOpenStates] = useState(
+    Array(additionalAccordionItems.length).fill(false)
+  );
+
+  const handleAccordionChange = (index) => {
+    const newOpenStates = [...openStates];
+    newOpenStates[index] = !newOpenStates[index];
+    setOpenStates(newOpenStates);
+  };
 
   return (
     <>
+      <Helmet>
+        <title>TitanHosting | VPS Storage</title>
+      </Helmet>
       <div
         style={{
-          marginTop: "70px",
+          marginTop: "130px",
           marginBottom: "50px",
           background: "#94DE77",
           borderRadius: "50px",
@@ -34,12 +47,10 @@ const VdsStorage = () => {
           <Grid container spacing={23} alignItems="center">
             <Grid item lg={6} md={6} sm={12} xs={12}>
               <Typography variant="h3" sx={{ fontWeight: 700 }}>
-                Серверы VPS/VDS с большим диском
+                {t("vpsTitle")}
               </Typography>
               <Typography variant="h6" color="gray" mt={3}>
-                Вам не подходит тариф с фиксированным объемом диска? Тогда VPS
-                STORAGE – для вас! Здесь вы сами выбираете, сколько вам нужно
-                места, и в зависимости от этого регулируете стоимость оплаты.
+                {t("vpsSubtitle")}
               </Typography>
 
               <Stack alignItems="center" direction="row" spacing={2} mt={3}>
@@ -47,7 +58,7 @@ const VdsStorage = () => {
                 <Typography
                   sx={{ fontSize: 18, fontWeight: 600, color: "#192306" }}
                 >
-                  Для запуска интернет магазина
+                  {t("vpsSubtitle1")}
                 </Typography>
               </Stack>
               <Stack alignItems="center" direction="row" spacing={2} mt={1}>
@@ -55,7 +66,7 @@ const VdsStorage = () => {
                 <Typography
                   sx={{ fontSize: 18, fontWeight: 600, color: "#192306" }}
                 >
-                  Создание и хранение бэкапов
+                  {t("vpsSubtitle2")}
                 </Typography>
               </Stack>
               <Stack alignItems="center" direction="row" spacing={2} mt={1}>
@@ -63,7 +74,7 @@ const VdsStorage = () => {
                 <Typography
                   sx={{ fontSize: 18, fontWeight: 600, color: "#192306" }}
                 >
-                  Создание медиа проектов
+                  {t("vpsSubtitle3")}
                 </Typography>
               </Stack>
               <Stack alignItems="center" direction="row" spacing={2} mt={1}>
@@ -71,7 +82,7 @@ const VdsStorage = () => {
                 <Typography
                   sx={{ fontSize: 18, fontWeight: 600, color: "#192306" }}
                 >
-                  Цена за 1 ГБ всего 0.03 €
+                  {t("vpsSubtitle4")}
                 </Typography>
               </Stack>
             </Grid>
@@ -90,29 +101,31 @@ const VdsStorage = () => {
         <Stack pt={9} spacing={4} mb={15}>
           {additionalAccordionItems.map((item, index) => (
             <Accordion
-              onChange={() => setIsAccordionOpen(!isAccordionOpen)}
               key={`additional_accordionItems_key${index}`}
-              sx={{ background: "#EDF2FF" }}
+              expanded={openStates[index]}
+              onChange={() => handleAccordionChange(index)}
+              sx={{ background: openStates[index] ? "#1A3378" : "#EDF2FF" }}
+              aria-controls={`panel-content-${index}`}
             >
               <AccordionSummary
                 sx={{
                   height: "70px",
-                  background: isAccordionOpen ? "#1A3378" : "#EDF2FF",
-                  color: isAccordionOpen ? "#fff" : "",
+                  background: openStates[index] ? "#1A3378" : "#EDF2FF",
+                  color: openStates[index] ? "#fff" : "",
                 }}
                 expandIcon={
                   <ExpandMoreIcon
-                    sx={{ color: isAccordionOpen ? "#fff" : "" }}
+                    sx={{ color: openStates[index] ? "#fff" : "" }}
                   />
                 }
-                aria-controls="panel1a-content"
-                id="panel1a-header"
+                aria-controls={`panel-content-${index}`}
+                id={`panel-header-${index}`}
               >
                 <Typography sx={{ fontSize: 18, fontWeight: 500 }}>
                   {t(item.title)}
                 </Typography>
               </AccordionSummary>
-              <AccordionDetails>
+              <AccordionDetails id={`panel-content-${index}`}>
                 <Typography
                   sx={{
                     fontSize: 17,

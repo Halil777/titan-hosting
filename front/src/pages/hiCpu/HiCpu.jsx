@@ -3,16 +3,21 @@ import { useTranslation } from "react-i18next";
 import IdealServer from "../../components/hi-cpu/IdealServer";
 import AdditionalService from "../../components/hi-cpu/AdditionalService";
 import MoreDefinition from "../../components/hi-cpu/MoreDefinition";
+import { Helmet } from "react-helmet-async";
 
 const HiCpu = () => {
   const { t } = useTranslation();
   return (
     <>
+      <Helmet>
+        <title>TitanHosting | Hi-CPU</title>
+      </Helmet>
       <div
         style={{
           paddingTop: "50px",
           paddingBottom: "50px",
           background: "#1B3379",
+          marginTop: "60px",
         }}
       >
         <Container>

@@ -1,23 +1,22 @@
 export const whyItems = [
   {
     pic: "./ssl/ssl-benefits-icon1.svg",
-    title: "Шифрование до 256 бит",
-    subTitle: "Тип шифрования — RSA, длина ключа подписи мин. 2048 бит",
+    title: "whyChooseTitle1",
+    subTitle: "whyChooseSubtitle1",
   },
   {
     pic: "./ssl/ssl-benefits-icon2.svg",
-    title: "Хеширование SHA-2",
-    subTitle: "Безопасный алгоритм хеширования до 512 бит для ключа",
+    title: "whyChooseTitle2",
+    subTitle: "whyChooseSubtitle2",
   },
   {
     pic: "./ssl/ssl-benefits-icon3.svg",
-    title: "Поддержка IDN-доменов",
-    subTitle:
-      "Домены могут содержать нелатинские символы и принадлежать .рф зоне",
+    title: "whyChooseTitle3",
+    subTitle: "whyChooseSubtitle3",
   },
   {
     pic: "./ssl/ssl-benefits-icon4.svg",
-    title: "Наличие печати доверия",
-    subTitle: "Подтверждение, проверки доверенным центром сертификации",
+    title: "whyChooseTitle4",
+    subTitle: "whyChooseSubtitle4",
   },
 ];

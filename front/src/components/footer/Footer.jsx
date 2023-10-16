@@ -17,8 +17,10 @@ import InstagramIcon from "@mui/icons-material/Instagram";
 import Email from "@mui/icons-material/Email";
 import Language from "../navbar/Language";
 import { vpsserveritems } from "../navbar/vps/vpsItems.mjs";
+import { useTranslation } from "react-i18next";
 
 const Footer = () => {
+  const { t } = useTranslation();
   const [phoneNumber, setPhoneNumber] = useState("");
 
   const handleChange = (event) => {
@@ -111,7 +113,7 @@ const Footer = () => {
                 <Stack direction="row" spacing={2}>
                   <img src={item.pic} alt="pic" style={{ width: "20px" }} />
                   <Typography sx={{ color: "darkgray" }}>
-                    {item.title}
+                    {t(item.title)}
                   </Typography>
                 </Stack>
               </Grid>

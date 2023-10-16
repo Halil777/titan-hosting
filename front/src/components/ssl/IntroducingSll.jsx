@@ -1,23 +1,20 @@
 import { Button, Container, Grid, Stack, Typography } from "@mui/material";
+import { useTranslation } from "react-i18next";
 
 const IntroducingSll = () => {
+  const { t } = useTranslation();
   return (
-    <div style={{ background: "#192F75" }}>
+    <div style={{ background: "#192F75", paddingTop: "60px" }}>
       <Container>
         <Grid container pt={10} pb={10}>
           <Grid item lg={6} md={6} sm={12} xs={12}>
             <Stack spacing={3}>
               <Typography variant="h3" color="white">
-                SSL-сертификаты для сайта
+                {t("sslTitle")}
               </Typography>
-              <Typography color="white">
-                Создаёт зашифрованное соединение, гарантируя посетителям <br />
-                безопасность и конфиденциальность.
-              </Typography>
-              <Typography color="white">
-                Стоимость сертификатов от 16.00 евро в год!
-              </Typography>
-              <Button
+              <Typography color="white">{t("sslSubtitle1")}</Typography>
+              <Typography color="white">{t("sslSubtitle2")}</Typography>
+              {/* <Button
                 variant="contained"
                 sx={{
                   width: "250px",
@@ -30,7 +27,7 @@ const IntroducingSll = () => {
                 }}
               >
                 выбрать сертификат
-              </Button>
+              </Button> */}
             </Stack>
           </Grid>
           <Grid

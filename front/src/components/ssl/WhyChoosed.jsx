@@ -1,12 +1,14 @@
 import { Container, Grid, Typography } from "@mui/material";
 import { whyItems } from "./whyItems.mjs";
+import { useTranslation } from "react-i18next";
 
 const WhyChoosed = () => {
+  const { t } = useTranslation();
   return (
     <div style={{ paddingTop: 50, paddingBottom: 50 }}>
       <Container>
         <Typography textAlign="center" fontWeight={700} variant="h3">
-          Почему выбирают
+          {t("whyChoose")}
         </Typography>
         <Typography
           textAlign="center"
@@ -14,7 +16,7 @@ const WhyChoosed = () => {
           fontWeight={700}
           variant="h3"
         >
-          SSL сертификаты от GlobalSign?
+          {t("fromGlobalSign")}
         </Typography>
         <Typography
           textAlign="center"
@@ -23,7 +25,7 @@ const WhyChoosed = () => {
           variant="h6"
           pt={2}
         >
-          За 20 лет работы компания выпустила более 25 миллионов сертификатов
+          {t("whyChooseSubtitle")}
         </Typography>
         <Grid container mt={7}>
           {whyItems.map((item, i) => (
@@ -51,10 +53,10 @@ const WhyChoosed = () => {
                 }}
               />
               <Typography variant="h6" textAlign={"center"}>
-                {item.title}
+                {t(item.title)}
               </Typography>
               <Typography color="gray" mt={-2} textAlign={"center"}>
-                {item.subTitle}
+                {t(item.subTitle)}
               </Typography>
             </Grid>
           ))}
