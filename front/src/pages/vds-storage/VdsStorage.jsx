@@ -104,7 +104,6 @@ const VdsStorage = () => {
               key={`additional_accordionItems_key${index}`}
               expanded={openStates[index]}
               onChange={() => handleAccordionChange(index)}
-              sx={{ background: openStates[index] ? "#1A3378" : "#EDF2FF" }}
               aria-controls={`panel-content-${index}`}
             >
               <AccordionSummary
@@ -125,7 +124,10 @@ const VdsStorage = () => {
                   {t(item.title)}
                 </Typography>
               </AccordionSummary>
-              <AccordionDetails id={`panel-content-${index}`}>
+              <AccordionDetails
+                id={`panel-content-${index}`}
+                sx={{ background: "#EDF2FF" }}
+              >
                 <Typography
                   sx={{
                     fontSize: 17,

@@ -18,9 +18,9 @@ const Home = () => {
   return (
     <>
       <Helmet>
-        <title> TitanHosting | SSL </title>
+        <title> TitanHosting </title>
       </Helmet>
-      <div style={{ background: "#1A3378", paddingTop: "70px" }}>
+      <div style={{ background: "#1A3378", paddingTop: "150px" }}>
         <Container>
           <Swiper
             modules={[Pagination, Scrollbar, A11y]}

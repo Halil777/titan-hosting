@@ -7,6 +7,7 @@ import HiCpu from "./pages/hiCpu/HiCpu";
 import VdsStorage from "./pages/vds-storage/VdsStorage";
 import { HelmetProvider } from "react-helmet-async";
 import Chat from "./chat/Chat";
+import Test from "./pages/test/Test";
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
               <Route path="hi-cpu" element={<HiCpu />} />
               <Route path="vds-storage" element={<VdsStorage />} />
               <Route path="chat" element={<Chat />} />
+              <Route path="test" element={<Test />} />
             </Route>
           </Routes>
         </BrowserRouter>

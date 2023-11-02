@@ -19,7 +19,17 @@ import { useState } from "react";
 
 const AdditionalService = () => {
   const { t } = useTranslation();
-  const [isAccordionOpen, setIsAccordionOpen] = useState(false);
+
+  const [openStates, setOpenStates] = useState(
+    Array(additionalAccordionItems.length).fill(false)
+  );
+
+  const handleAccordionChange = (index) => {
+    const newOpenStates = [...openStates];
+    newOpenStates[index] = !newOpenStates[index];
+    setOpenStates(newOpenStates);
+  };
+
   return (
     <div style={{ paddingTop: "50px", paddingBottom: "50px" }}>
       <Container>
@@ -50,29 +60,33 @@ const AdditionalService = () => {
         <Stack pt={9} spacing={4}>
           {additionalAccordionItems.map((item, index) => (
             <Accordion
-              onChange={() => setIsAccordionOpen(!isAccordionOpen)}
               key={`additional_accordionItems_key${index}`}
-              sx={{ background: "#EDF2FF" }}
+              expanded={openStates[index]}
+              onChange={() => handleAccordionChange(index)}
+              aria-controls={`panel-content-${index}`}
             >
               <AccordionSummary
                 sx={{
                   height: "70px",
-                  background: isAccordionOpen ? "#1A3378" : "#EDF2FF",
-                  color: isAccordionOpen ? "#fff" : "",
+                  background: openStates[index] ? "#1A3378" : "#EDF2FF",
+                  color: openStates[index] ? "#fff" : "",
                 }}
                 expandIcon={
                   <ExpandMoreIcon
-                    sx={{ color: isAccordionOpen ? "#fff" : "" }}
+                    sx={{ color: openStates[index] ? "#fff" : "" }}
                   />
                 }
-                aria-controls="panel1a-content"
-                id="panel1a-header"
+                aria-controls={`panel-content-${index}`}
+                id={`panel-header-${index}`}
               >
                 <Typography sx={{ fontSize: 18, fontWeight: 500 }}>
                   {t(item.title)}
                 </Typography>
               </AccordionSummary>
-              <AccordionDetails>
+              <AccordionDetails
+                id={`panel-content-${index}`}
+                sx={{ background: "#EDF2FF" }}
+              >
                 <Typography
                   sx={{
                     fontSize: 17,

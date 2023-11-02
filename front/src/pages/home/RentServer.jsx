@@ -1,7 +1,9 @@
 import { Box, Container, Grid, Stack, Typography } from "@mui/material";
 import { vpsserveritems } from "../../components/navbar/vps/vpsItems.mjs";
+import { useTranslation } from "react-i18next";
 
 const RentServer = () => {
+  const { t } = useTranslation();
   return (
     <div style={{ paddingTop: "50px", paddingBottom: "50px" }}>
       <Container>
@@ -31,7 +33,7 @@ const RentServer = () => {
                     style={{ width: "25px" }}
                     alt="rent servers"
                   />
-                  <Typography>{item.title}</Typography>
+                  <Typography>{t(item.title)}</Typography>
                 </Stack>
               </Grid>
             ))}
