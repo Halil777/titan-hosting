@@ -15,6 +15,16 @@ import { useTranslation } from "react-i18next";
 const Footer = () => {
   const { t } = useTranslation();
 
+  const handleTelegramClick = () => {
+    // Open a link to your Telegram account
+    window.open("https://t.me/LockUnLock"); // Replace 'LockUnLock' with your Telegram username.
+  };
+
+  const handleEmailClick = () => {
+    // Open the user's email client to compose an email
+    window.location.href = "mailto:titanhosting.ru@gmail.com"; // Replace with your email address.
+  };
+
   return (
     <div style={{ background: "blue" }}>
       <Container>
@@ -51,10 +61,10 @@ const Footer = () => {
               spacing={1}
               sx={{ height: "100%" }}
             >
-              <IconButton>
+              <IconButton onClick={handleTelegramClick}>
                 <Telegram sx={{ color: "#fff" }} />
               </IconButton>
-              <IconButton>
+              <IconButton onClick={handleEmailClick}>
                 <Email sx={{ color: "#fff" }} />
               </IconButton>
             </Stack>
