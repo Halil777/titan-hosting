@@ -10,6 +10,7 @@ import Chat from "./chat/Chat";
 import Test from "./pages/test/Test";
 
 function App() {
+  // console.log("clear code")
   return (
     <>
       <HelmetProvider>
